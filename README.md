@@ -8,14 +8,14 @@ Monerod server
 
 **TESTED & WORKING**
 
-https://github.com/grummerd/monero-setup/tree/master/server
+[Setup server](https://github.com/grummerd/monero-setup/tree/master/server)
 
 Client laptop
 ---------------
 
 **TESTED & WORKING**
 
-https://github.com/grummerd/monero-setup/tree/master/client
+[Setup Wallet on a separate laptop/usb](https://github.com/grummerd/monero-setup/tree/master/client)
 
 
 What this tutorial doesn't do
