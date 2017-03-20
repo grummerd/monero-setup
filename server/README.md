@@ -23,6 +23,16 @@ Follow the instructions
 https://github.com/monero-project/monero
 - Install the dependancies
 
+If you followed the System Requirements section, the the minimum versions of each dependancy will be available
+
+Shows installed/available versions
+
+`sudo apt-cache policy [package name]`
+
+Install dependency package
+
+`sudo apt-get install -y [package name]`
+
 - Install monero
 
 `cd monero`
