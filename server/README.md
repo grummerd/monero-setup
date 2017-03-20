@@ -23,9 +23,7 @@ Use `git clone [repository url]` don't download the repository! I made that mist
 Install the dependancies
 ------------------------------
 
-Follow the instructions
-
-https://github.com/monero-project/monero
+[Follow the instructions](https://github.com/monero-project/monero)
 
 If you followed the System Requirements section, the the minimum versions of each dependancy will be available
 
@@ -52,7 +50,7 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  
  `sudo vim /etc/network/interfaces`
  
- https://github.com/grummerd/monero-setup/blob/master/server/etc/network/interfaces 
+ [/etc/network/interfaces](https://github.com/grummerd/monero-setup/blob/master/server/etc/network/interfaces)
  
  `ifconfig` to show updated network interfaces
  
@@ -61,18 +59,16 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
   
  `sudo vim /etc/monerod.conf`
  
- https://github.com/grummerd/monero-setup/blob/master/server/etc/monerod.conf
+ [/etc/monerod.conf](https://github.com/grummerd/monero-setup/blob/master/server/etc/monerod.conf)
 
-Credit
-
-http://monero.stackexchange.com/questions/3063/no-igd-port-mapping
+[Credit](http://monero.stackexchange.com/questions/3063/no-igd-port-mapping)
 
  Make some alias in `~/.profile`
  ------------------------------
   
  `vim ~/.profile`
  
- https://github.com/grummerd/monero-setup/blob/master/server/home/yourusername/.profile
+ [~/.profile](https://github.com/grummerd/monero-setup/blob/master/server/home/yourusername/.profile)
  
  `source ~/.profile`
  
@@ -81,12 +77,12 @@ http://monero.stackexchange.com/questions/3063/no-igd-port-mapping
  Open ports in server's firewall
  ------------------------------
  
- https://github.com/grummerd/monero-setup/blob/master/server/ufw.md
+ [ufw configuration](https://github.com/grummerd/monero-setup/blob/master/server/ufw.md)
  
  Port forwarding in router
  ------------------------------
  
- https://github.com/grummerd/monero-setup/blob/master/server/router.md
+ [router configuration](https://github.com/grummerd/monero-setup/blob/master/server/router.md)
  
  start monerod
  ------------------------------
