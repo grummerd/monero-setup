@@ -1,0 +1,27 @@
+# Make your server's IP static, not dhcp
+# In your router, dhcp should be limited to be able to issue only n licenses
+# The static ip should be outside range 2...n
+# My router dhcp settings are limited to 192.168.11.2 -> 192.168.11.16
+# The /etc/network/interfaces is where this computer says it has a static IP
+# And that IP is 192.168.11.253
+# My router is at 192.168.11.1, your router maybe on a different subnet
+# So expect to make changes to this file, depending on your router's IP address
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+#the primary network interface
+# Normally the interface is eth0. Mine is weird, enp0s25
+# Yours will probably be different
+
+auto enp0s25
+iface enp0s25 inet static
+address 192.168.11.253
+netmask 255.255.255.0
+network 192.168.11.0
+broadcast 192.168.11.255
+gateway 192.168.11.1
+dns-nameservers 8.8.8.8 8.8.4.4
