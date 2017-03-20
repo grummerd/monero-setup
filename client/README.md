@@ -30,16 +30,16 @@ Follow server setup instructions
 
 - install dependencies
 
-https://github.com/grummerd/monero-setup/tree/master/server#install-the-dependancies
+[Same as instructions for the server](https://github.com/grummerd/monero-setup/tree/master/server#install-the-dependancies)
 
 - install monero
 
-https://github.com/grummerd/monero-setup/tree/master/server#install-monero
+[Same as instructions for the server](https://github.com/grummerd/monero-setup/tree/master/server#install-monero)
 
 Setup alias in `~/.profile`
 -----------------------------
 
-https://github.com/grummerd/monero-setup/blob/master/client/.profile
+[~/.profile](https://github.com/grummerd/monero-setup/blob/master/client/.profile)
 
 All the config is in `~/.profile`
 
@@ -48,6 +48,10 @@ There is no `config-file`
 In ~/.profile, replace
 
 - `[your external ip]`
+
+If not on the same network as server, the networks external ip
+
+If on the same network as the server, the server's local ip
 
 - `[your wallet password]`
 
@@ -59,7 +63,7 @@ Outside seeing the world, teaching the bitchez what monero is, $CLIEXTERNAL
 - rpc login
 If the rpc monero server has this setup (in /etc/monerod.conf), uncomment `DAEMONAUTH` and set the login:password
 
-START Wallet!!
+START CLI Wallet!!
 ------------------
 
 cli
