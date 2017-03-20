@@ -50,9 +50,11 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  Setup static IP
  ------------------------------
  
- sudo vim /etc/network/interfaces
+ `sudo vim /etc/network/interfaces`
  
  https://github.com/grummerd/monero-setup/blob/master/server/etc/network/interfaces 
+ 
+ `ifconfig` to show updated network interfaces
  
  Setup monerod config file
  ------------------------------
@@ -65,7 +67,7 @@ Credit
 
 http://monero.stackexchange.com/questions/3063/no-igd-port-mapping
 
- Make some alias in ~/.profile
+ Make some alias in `~/.profile`
  ------------------------------
   
  `vim ~/.profile`
