@@ -23,7 +23,7 @@ What this tutorial doesn't do
 
 - run torsocks
 
-- communicate thru an ssh tunnel or ssh proxy
+- encrypt rpc communication using ssh tunnel or ssh proxy
 
 - hide that you are running a monero server and wallet
 
