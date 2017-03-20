@@ -1,7 +1,7 @@
 # monero-setup
 Here is how to setup Monero, both client and server. For local network use and for using the wallet via an external network.
 
-The hole point is to be mobile. For that we need rpc working
+The whole point is to be mobile. For that we need rpc working
 
 Monerod server 
 ------------------
