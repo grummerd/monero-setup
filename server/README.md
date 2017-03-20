@@ -60,7 +60,11 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  `sudo vim /etc/monerod.conf`
  
  https://github.com/grummerd/monero-setup/blob/master/server/etc/monerod.conf
- 
+
+Credit
+
+http://monero.stackexchange.com/questions/3063/no-igd-port-mapping
+
  Make some alias in ~/.profile
  ------------------------------
   
