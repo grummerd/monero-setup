@@ -15,13 +15,17 @@ Blockchain takes up ~ 200GB
 
 - Kickass CPU (i have 8 threads)
 
-- Install monerod
+Get monerod
+------------------------------
+
 Use `git clone [repository url]` don't download the repository! I made that mistake.
 
+Install the dependancies
+------------------------------
 
 Follow the instructions
+
 https://github.com/monero-project/monero
-- Install the dependancies
 
 If you followed the System Requirements section, the the minimum versions of each dependancy will be available
 
@@ -33,7 +37,8 @@ Install dependency package
 
 `sudo apt-get install -y [package name]`
 
-- Install monero
+Install monero
+------------------------------
 
 `cd monero`
 
@@ -42,19 +47,23 @@ Install dependency package
 j (Total Amount of RAM / 2GB) -1 . Is the max # of threads you can compile with.
 For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  
- - Setup static IP
+ Setup static IP
+ ------------------------------
+ 
  sudo vim /etc/network/interfaces
  
  https://github.com/grummerd/monero-setup/blob/master/server/etc/network/interfaces 
  
- - Setup monerod config file
- 
+ Setup monerod config file
+ ------------------------------
+  
  `sudo vim /etc/monerod.conf`
  
  https://github.com/grummerd/monero-setup/blob/master/server/etc/monerod.conf
  
- - Make some alias in ~/.profile
- 
+ Make some alias in ~/.profile
+ ------------------------------
+  
  `vim ~/.profile`
  
  https://github.com/grummerd/monero-setup/blob/master/server/home/yourusername/.profile
@@ -63,22 +72,26 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  
  You will now have the commands: `monerodstart`, `monerodstartnodetach`, `monerodstop`
  
- - Open ports in server's firewall
+ Open ports in server's firewall
+ ------------------------------
  
  https://github.com/grummerd/monero-setup/blob/master/server/ufw.md
  
- - Port forwarding in router
+ Port forwarding in router
+ ------------------------------
  
  https://github.com/grummerd/monero-setup/blob/master/server/router.md
  
- - start monerod
+ start monerod
+ ------------------------------
  
  `monerodstartnodetach`
  
  Took ~3 hours to sync. Had to stop (Ctrl+c), a few times. If you are getting nothing but ERRORS and no sync status INFO msgs. 
  Stop the sync and restart
  
- - monerod log file
+ monerod log file
+ ------------------------------
  
  `sudo cat /var/log/monero.log | less`
  
@@ -86,7 +99,8 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  
  `sudo cat /var/log/monero.log | tail -n 50 | less`
  
- - delete monerod log file
+ delete monerod log file
+ ------------------------------
  
  This will empty the log file. Do this before running a configuration test
  
