@@ -59,6 +59,7 @@ Outside seeing the world, teaching the bitchez what monero is, $CLIEXTERNAL
 - rpc login
 If the rpc monero server has this setup (in /etc/monerod.conf), uncomment `DAEMONAUTH` and set the login:password
 
-- START Wallet!!
+START Wallet!!
+------------------
 
 cli
