@@ -110,3 +110,76 @@ For me, 8GB / 2GB = 4 - 1 = 3. My CPU has 8 threads. Compiled using 3 threads
  sudo rm -rf /var/log/monero.log
  sudo touch /var/log/monero.log
  ```
+Mitigate bandwidth limitations
+-------------------------------
+
+[Default monerod bandwidth usage limits](https://github.com/monero-project/monero/blob/master/src/p2p/net_node.inl)
+
+- Upload 2048 KB/s
+
+- Download 8192 KB/s
+
+On a slow network, these defaults can prevent web access by everyone else on the same network
+
+To prevent hysterical phone calls at inappropriate hours, lets determine what to set these values to. We care about resource limitations, not the philosophical question about other extreme.
+
+Install speedtest -- web bandwidth tester (cli)
+
+```
+sudo apt-cache policy python-pip
+sudo apt-get install python pip
+pip install speedtest-cli
+speedtest --bytes
+```
+
+These are a real example results (before running monerod)
+
+    Retrieving speedtest.net configuration...
+    Testing from J:COM ([external ip address])...
+    Retrieving speedtest.net server list...
+    Selecting best server based on ping...
+    Hosted by satoweb (Sakai) [13.02 km]: 177.248 ms
+    Testing download speed................................................................................
+    Download: 4.94 Mbyte/s
+    Testing upload speed....................................................................................................
+    Upload: 0.66 Mbyte/s
+
+Assuming speedtest is accurate enough, guessimated 1MBytes/sec download and 300KBytes/sec upload can be dedicated to monerod without crippling other users' web access
+
+In `/etc/monerod.conf` set
+
+```
+
+limit-rate-down=1000
+limit-rate-up=300
+
+```
+
+These are real example results with this configuration and while running `monerod`
+
+    Retrieving speedtest.net configuration...
+    Testing from J:COM ([external ip address])...
+    Retrieving speedtest.net server list...
+    Selecting best server based on ping...
+    Hosted by rxy (individual) (Osaka) [1.83 km]: 181.656 ms
+    Testing download speed................................................................................
+    Download: 2.46 Mbyte/s
+    Testing upload speed....................................................................................................
+    Upload: 0.36 Mbyte/s
+
+Lets see what bandwidth is left for other users
+
+**DOWNLOAD**
+4.94 - 1.00 = 3.94 MBytes/sec
+
+Yet speedtest says **2.46M Bytes/sec** remain
+
+**UPLOAD**
+
+0.66 - 0.30 = 0.36 MBytes / sec
+
+Speedtest also reports **0.36 MBytes / sec**
+
+**Conclusion**
+
+Could we set the bandwidth consumption a little higher? Maybe. We can be sure now that `monerod` bandwidth consumption is under control. And the disaster of bringing the network to it's knees has been averted.
