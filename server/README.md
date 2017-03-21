@@ -123,7 +123,7 @@ On a slow network, these defaults can prevent web access by everyone else on the
 
 To prevent hysterical phone calls at inappropriate hours, lets determine what to set these values to. We care about resource limitations, not the philosophical question about the other extreme.
 
-Install speedtest -- web bandwidth tester (cli)
+[Install speedtest](https://github.com/sivel/speedtest-cli) -- web bandwidth tester (cli)
 
 ```
 sudo apt-cache policy python-pip
