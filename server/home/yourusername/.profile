@@ -24,7 +24,7 @@ PATH="$PATH:$HOME/Downloads/monero-master/build/release/bin"
 
 # Since server will run rpc, calls to monerod require rpc ip, port, and maybe login
 # Edit /etc/monerod.conf to switch ip & port for connecting  to internal network < -- > external network
-MONEROPREFIX="sudo monerod --config-file=/etc/monerod.conf"
-alias monerodstart='$MONEROPREFIX --detach --no-igd --confirm-external-bind' # --restricted-rpc
+MONEROPREFIX="sudo monerod --config-file=/etc/monerod.conf --restricted-rpc"
+alias monerodstart='$MONEROPREFIX --detach --no-igd --confirm-external-bind'
 alias monerodstartnodetach='$MONEROPREFIX --confirm-external-bind --no-igd'
 alias monerodstop='$MONEROPREFIX exit'
