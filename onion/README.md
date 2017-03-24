@@ -105,3 +105,10 @@ monero GUI
 -------------
 
 `torsocks ./start-gui.sh --daemon-host [tor-hostname.onion]`
+
+trouble shooting
+------------------
+
+Will lists the tor control port #. Which seems to be randomized. Was hoping to find 9050 in this list. But no luck
+
+    sudo netstat -anp | grep LISTENING
