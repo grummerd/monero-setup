@@ -116,3 +116,5 @@ Will lists the tor control port #. Which seems to be randomized. Was hoping to f
 Test torsocks is working
 
     torsocks curl --silent https://check.torproject.org/ | grep Congratulations
+
+[Source](https://people.debian.org/~lunar/blog/posts/tor_only_outgoing_firewall/)
