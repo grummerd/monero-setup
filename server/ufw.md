@@ -36,3 +36,8 @@ New Profiles: skip
 | 18080 (v6) | ALLOW IN | Anywhere (v6) |
 
 | 18081 (v6) | ALLOW IN | Anywhere (v6) |
+
+
+If need to restart ufw
+
+    sudo service ufw restart
