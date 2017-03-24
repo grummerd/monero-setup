@@ -46,6 +46,10 @@ If disabled...
 Open tor port. Router does not need any port forwarding set up
 
     sudo ufw allow 18081/tcp
+    
+ufw restart
+
+    sudo service ufw restart
 
 If not using ufw and using iptables, here is the same command
 
