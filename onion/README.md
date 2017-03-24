@@ -118,3 +118,11 @@ Test torsocks is working
     torsocks curl --silent https://check.torproject.org/ | grep Congratulations
 
 [Source](https://people.debian.org/~lunar/blog/posts/tor_only_outgoing_firewall/)
+
+Guy with same error
+
+[torsocks monerod Operation not permitted](https://bitcointalk.org/index.php?topic=583449.msg11649248#msg11649248)
+[torsocks monerod more verbose errors](https://bitcointalk.org/index.php?topic=583449.msg11650205#msg11650205)
+[tor not torsocks solution](https://bitcointalk.org/index.php?topic=583449.msg11657029#msg11657029)
+
+[route dns thru tor](https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy#TransparentlyDoingDNSandRoutingfor.onionTraffic)
