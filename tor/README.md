@@ -1,7 +1,10 @@
-monerod Tor setup
--------------------
+# monerod Tor / onion setup
 
 **This is a work in progress**
+
+[full explanation found!](https://garlicgambit.wordpress.com/2017/01/15/monero-how-to-connect-wallet-to-tor-onion-service-node/)
+
+Lets clean up this explanation and test it
 
 Advantages
 -------------
@@ -25,7 +28,9 @@ Configuring tor
 
 Connecting wallet to a tor onion
 
-    torsocks ./monero-wallet-cli --daemon-host [onion file]
+    torsocks ./monero-wallet-cli --daemon-host=[onion file] --daemon-port=[onion port #] --log-level=2
+
+[Someone else who connects wallet thru onion](https://whattheserver.me/blog/monero-monero-client-cli/)
 
 Says need to open port 18081. Weird? Shouldn't everything go over port 9050? This is one year old
 
