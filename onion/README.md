@@ -1,3 +1,5 @@
+**This is a work in progress. Not working yet**
+
 Everything concerning how to allow monero-wallet-cli connect via an onion file
 
 Install tor
@@ -117,6 +119,8 @@ Test torsocks is working
 
     torsocks curl --silent https://check.torproject.org/ | grep Congratulations
 
+[Ubuntu Using tor beginner guide](https://www.linux.com/blog/beginners-guide-tor-ubuntu)
+
 [Source](https://people.debian.org/~lunar/blog/posts/tor_only_outgoing_firewall/)
 
 Guy with same error
@@ -126,3 +130,9 @@ Guy with same error
 [tor not torsocks solution](https://bitcointalk.org/index.php?topic=583449.msg11657029#msg11657029)
 
 [route dns thru tor](https://trac.torproject.org/projects/tor/wiki/doc/TransparentProxy#TransparentlyDoingDNSandRoutingfor.onionTraffic)
+
+Added to `/etc/ufw/before.rules`
+Before section "allow all on loopback"
+    
+    -A ufw-before-output -t nat -p tcp -d 10.192.0.0/10 -j REDIRECT --to-ports 9040
+    
