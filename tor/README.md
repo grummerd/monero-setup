@@ -12,6 +12,37 @@ Advantages
 
 Once (korvi) i2p support comes out, use that, not tor. In the meantime, lets piece together how to configure monerod server and cli wallet thru tor
 
+Disadvantages
+----------------
+
+Using onion files maybe difficult. Need to test this. Seems using an onion and torsocks is different. Can't both be used simultaneously. Only want to connect the wallet via an onion. So maybe the onion is only for the rpc port (18081), not the p2p port (18080)??
+
+[Link](http://monero.stackexchange.com/a/2313)
+
+
+Configuring tor
+----------------
+
+Connecting wallet to a tor onion
+
+    torsocks ./monero-wallet-cli --daemon-host [onion file]
+
+Says need to open port 18081. Weird? Shouldn't everything go over port 9050? This is one year old
+
+    sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT
+
+    DNS_PUBLIC=tcp TORSOCKS_ALLOW_INBOUND=1 torsocks ./bitmonerod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 --data-dir /home/amnesia/Persistent/your/directory/to/the/blockchain
+
+    ./simplewallet
+
+[Source](https://www.reddit.com/r/Monero/comments/4cfcy2/how_can_i_connect_simplewallet_over_tor/d1qb6rp/)
+
+Might need this option `--allow-mismatched-daemon-version`
+
+Take this with a grain of salt. Need to test whether or not it's needed
+
+[Source](https://www.reddit.com/r/DarkNetMarkets/comments/5e3xxs/easy_guide_to_monerotailstor/dab0hhi/)
+
 p2pstate.bin (Tor session)
 ----------------------------
 
