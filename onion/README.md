@@ -64,6 +64,8 @@ In `~/.profile`
 
     alias onionstart='DNS_PUBLIC=tcp TORSOCKS_ALLOW_INBOUND=1 torsocks monerod --config-file=/etc/monerod.conf --restricted-rpc --detach --no-igd --confirm-external-bind'
 
+In terminal, `source ~/.profile`
+
 In `/etc/monerod.conf`
 
     data-dir=/var/lib/monero
@@ -82,7 +84,22 @@ This sets login credentials on the monerod level. It's also possible on the [oni
 monero-wallet-cli
 -------------------
 
-`torsocks ./monero-wallet-cli --daemon-host [tor-hostname.onion]`
+In `~/.profile`
+
+    WALLET="--wallet-file=$HOME/.monero/personal.xmr.wallet --password=[your wallet password]"
+    MAXTHREADS="--max-concurrency=3"
+    DAEMONAUTH="--daemon-login=[login:password]"
+    EXTERNAL="--daemon-host=[ur .onion host]:18081"
+    CLIEXTERNAL="$DAEMONAUTH $EXTERNAL --trusted-daemon"
+    CLI="$HOME/Downloads/monero/build/release/bin/monero-wallet-cli"
+    CLILOG="--log-level=1 --log-file=$HOME/.monero/cli.log"
+    alias cli="torsocks $CLI $CLILOG $CLIEXTERNAL $WALLET $MAXTHREADS"
+
+In terminal, `source ~/.profile`
+
+To open monero cli wallet which connects using the onion host  
+
+    cli
 
 monero GUI
 -------------
